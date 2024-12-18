@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="node_modules\jquery\dist\jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .side {
+            height: 100vh;
+            background-color: #f1f3f5;
+            padding: 30px;
+            position: fixed;
+            width: 280px;    
+        }
+        #scroll{
+          overflow-y: scroll;
+          height: 400px;
+        }
+        .main-content {
+            margin-left: 270px;   
+        }
+        #feedback{
+          position: fixed; 
+          bottom: 0; 
+          width:250px;
+          left: 10px;
+          background-color: #f1f3f5;
+        }
+        .card {
+            border-radius: 10px;
+            border: 1px solid lightgray;
+            padding: 20px;
+            box-shadow: 1px 1px 2px lightgray;
+        }
+        .header {
+            background-color: #213353;
+            color: white;
+            padding: 20px;
+            position: sticky;
+            top:0;
+            z-index: 1;
+        }
+        .header h2 {
+            margin: 0;
+        }
+        .help-support {
+            background-image: url('support1.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 250px;
+            position: relative;
+            border-radius: 15px;
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+        .profile-info img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
+        .profile-info p {
+            margin-left: 10px;
+        }
+        .progress{
+          width: 150px;
+          margin: 5px;
+        }
+        #customize{
+          position: fixed;
+          bottom: 10px; 
+          right: 10px;  
+          background-color: #213353;
+          color: white;
+          z-index: 1;
+        }
+    </style>
+</head>
+<body>
+  
+  <div class="row">
+    <div class="col-lg-2 col-md-3 side">
+      <img src="https://preview.keenthemes.com/keen/demo1/assets/media/logos/default.svg" alt="" width="120px" height="60px">
+      <hr>
+      <ul class="flex-column" id="scroll">
+        <li class="nav-item my-3 main-nav">
+          <a class="nav-link " href="#">Dashboards</a>
+          <ul class="sub-nav">
+            <li class="nav-item my-2">
+              <a class="nav-link " href="#">Default</a>
+            </li>
+            <li class="nav-item my-2">
+              <a class="nav-link " href="#">Projects</a>
+            </li>
+            <li class="nav-item my-2">
+              <a class="nav-link " href="#">eCommerce</a>
+            </li>
+            <li class="nav-item my-2">
+              <a class="nav-link " href="#">Marketing</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item my-3 main-nav">
+          <a class="nav-link " href="#">Pages</a>
+          <ul class="sub-nav">
+            <li class="nav-item my-2">
+              <a class="nav-link " href="#">User-Profile</a>
+            </li>
+            <li class="nav-item my-2">
+              <a class="nav-link " href="#">Accounts</a>
+            </li>
+            <li class="nav-item my-2">
+              <a class="nav-link " href="#">Authentication</a>
+            </li>
+            <li class="nav-item my-2">
+              <a class="nav-link " href="#">corporate</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item my-3 main-nav">
+          <a class="nav-link " href="#">Apps</a>
+          <ul class="sub-nav">
+            <li class="nav-item my-2">
+              <a class="nav-link " href="#">Contacts</a>
+            </li>
+            <li class="nav-item my-2">
+              <a class="nav-link " href="#">Projects</a>
+            </li>
+            <li class="nav-item my-2">
+              <a class="nav-link " href="#">eCommerce</a>
+            </li>
+            <li class="nav-item my-2">
+              <a class="nav-link " href="#">Support center</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item my-3 main-nav">
+          <a class="nav-link " href="#">Layouts</a>
+          <ul class="sub-nav">
+            <li class="nav-item my-2">
+              <a class="nav-link " href="#">Layout options</a>
+            </li>
+            <li class="nav-item my-2">
+              <a class="nav-link " href="#">Layout builders</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+  </div>
+  <div id="feedback">
+    <p class="text-center">Our support team is available to give you answers fast</p>
+    <button class="btn btn-primary mt-3 w-100">Submit Feedback</button>
+  </div>
+
+  
+  <div class="col-lg-10 col-md-9 main-content">
+   
+    <div class="header d-flex justify-content-between align-items-center my-3">
+      <div>
+        <h2>Overview</h2>
+        <p>Let's add here useful info like Campaign ID #XRT-246</p>
+      </div>
+      <div class="profile-info">
+        <p class="mt-3">Paul Melone <br><span style="font-size: 12px;" class="ms-4">Ad Expert</span></p>
+        <img src="https://preview.keenthemes.com/keen/demo1/assets/media/avatars/300-3.jpg" alt="Profile Picture">
+        <button class="btn btn-primary ms-3">New Campaign</button>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-end">
+      <button type="button" id="customize" class="btn m-3"><img src="icons8-equalizer-30.png" alt="">&nbsp;Customize</button>
+    </div>
+
+    <div class="container row m-4">
+      <div class="col-md-12 col-lg-4">
+        <div class="container row row-2 m-4 justify-content-center ">
+          <div class="col-lg-6 col-md-4 mt-1">
+            <div class="card card-custom">
+              <img src="icons8-add-50.png" alt="" width="30px" height="30px">
+              <h6 class="text-center">Add New</h6>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-4 mt-1">
+            <div class="card card-custom">
+              <img src="icons8-activity-feed-48.png" alt="" width="30px" height="30px">
+              <h6 class="text-center">eCommerce</h6>
+            </div>
+          </div> 
+        </div>
+        <div class="container row row-2 m-4 justify-content-center ">
+          <div class="col-lg-6 col-md-4" mt-1>
+            <div class="card card-custom">
+              <img src="icons8-contact-50.png" alt="" width="35px" height="35px">
+              <h6 class="text-center">Contacts</h6>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-4 mt-1">
+            <div class="card card-custom">
+              <img src="icons8-rocket-50.png" alt="" width="35px" height="35px">
+              <h6 class="text-center">File Manager</h6>
+            </div>
+          </div>
+        </div>
+        <div class="container row row-2 m-4 justify-content-center">
+          <div class="col-lg-6 col-md-4 mt-1">
+            <div class="card card-custom">
+              <img src="icons8-pie-chart-50.png" alt="" width="35px" height="35px">
+              <h6 class="text-center">Subscriptions</h6>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-4 mt-1">
+            <div class="card card-custom">
+              <img src="icons8-help-50.png" alt="" width="35px" height="35px">
+              <h6 class="text-center">Help Support</h6>
+            </div>
+          </div>
+        </div>
+        <div class="row row-5 m-4">
+          <div class="col">
+            <div class="card card-custom">
+              <p class="border border-light rounded-3 p-3 text-center text-warning mb-4" style="background-color: lightgoldenrodyellow"><b>Campaign Glossary</b></p>
+              <div class="p-3 border border-dotted border-primary rounded d-flex justify-content-between">
+                <div><img src="icons8-important-40.png" alt=""></div>
+                <div class="ms-3">
+                  <h5>Important note!</h5>
+                  <p>Please add tracking code to your website to optimize your campaign</p>
+                </div>
+              </div>
+              <button type="button" class="btn btn-primary mt-2">Add Conversion Tracking</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col">
+        <div class="card help-support p-4">
+          <div class="content p-3">
+            <h4>Help & Support</h4>
+            <p>Our customer service is about empathy</p>
+            <a href="#" class="btn btn-primary">Contact Us</a>
+          </div>
+        </div>
+  
+
+        <div class="mt-5 container-fluid">
+          <h4>Campaigns</h4>
+          <div class="table-responsive">
+              <table class="table table-hover">
+                  <thead class="table-light">
+                      <tr>
+                          <th>Status</th>
+                          <th>Name</th>
+                          <th>Budget</th>
+                          <th>Optimization Score</th>
+                          <th>Action</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td><span class="badge bg-success w-75">Live Now</span></td>
+                          <td>Marni Schlanger</td>
+                          <td>$15 Daily</td>
+                          <td>
+                              <div class="progress">
+                                  <div class="progress-bar bg-primary" style="width: 65%" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                          </td>
+                          <td><button type="button" class="btn btn-outline-secondary">→</button></td>
+                      </tr>
+                      <tr>
+                          <td><span class="badge bg-primary w-75">Reviewing</span></td>
+                          <td>Addison Smart</td>
+                          <td>$10 Daily</td>
+                          <td>
+                              <div class="progress">
+                                  <div class="progress-bar bg-primary" style="width: 5%" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                          </td>
+                          <td><button type="button" class="btn btn-outline-secondary">→</button></td>
+                      </tr>
+                      <tr>
+                          <td><span class="badge bg-warning w-75">Paused</span></td>
+                          <td>Paul Melone</td>
+                          <td>$3 Daily</td>
+                          <td>
+                              <div class="progress">
+                                  <div class="progress-bar bg-primary" style="width: 35%" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                          </td>
+                          <td><button type="button" class="btn btn-outline-secondary">→</button></td>
+                      </tr>
+                      <tr>
+                          <td><span class="badge bg-success w-75">Live Now</span></td>
+                          <td>Marni Schlanger</td>
+                          <td>$23 Daily</td>
+                          <td>
+                              <div class="progress">
+                                  <div class="progress-bar bg-primary" style="width: 75%" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                          </td>
+                          <td><button type="button" class="btn btn-outline-secondary">→</button></td>
+                      </tr>
+                      <tr>
+                          <td><span class="badge bg-warning w-75">Paused</span></td>
+                          <td>James Webb</td>
+                          <td>$15 Daily</td>
+                          <td>
+                              <div class="progress">
+                                  <div class="progress-bar bg-primary" style="width: 45%" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                          </td>
+                          <td><button type="button" class="btn btn-outline-secondary">→</button></td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>  
+    </div>
+    </div>
+    <div class="container px-3 mb-4">
+      <div class="row justify-content-center">
+        <div class="col-md-10 col-lg border border-secondary p-3">
+          <p class="text-secondary">Let's add some useful info here</p>
+          <input type="text" class="form-control text-secondary mb-3" placeholder="Dropdown Fixed">
+          <div class="text-center">
+            <img src="unable.webp" alt="" class="img-fluid" style="max-width: 100%; height: auto;">
+          </div>
+          <p class="text-center mt-3">We are not able to generate chart of campaigns at the moment. Please try later</p>
+        </div>
+      </div>
+    </div>
+  
+    
+  </div>
+</div>
+  <script>
+    $(document).ready(function(){
+      $('.sub-nav').hide();
+      $('.main-nav').click(function(){
+        $(this).find('.sub-nav').toggle();
+      });
+    });
+  </script>
+</body>
+</html>
